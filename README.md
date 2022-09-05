@@ -1,0 +1,2 @@
+# Sunucu_istek_yogunlugunun_multithread_ile_kontrolu
+ Multithread kullanımı
