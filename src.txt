@@ -1,0 +1,2180 @@
+package multithread;
+
+import java.util.Random;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import javax.swing.JButton; 
+import javax.swing.JFrame; 
+
+public class Multithread extends JFrame {
+	static Random rand=new Random();
+	static int kapasite=0;
+	int i;
+	int yenisub=2;
+	int mainCevaplanan=0;
+	int subKapasite[]=new int[20];
+	int subCevaplanan[]=new int[20];
+	static Object lock =new Object();
+	static Object lock3 =new Object();
+	static Object lock4 =new Object();
+	static Lock lock2=new ReentrantLock();
+	static Lock lock5=new ReentrantLock();
+	int istekSayisi=0;
+	int istenilenIstekSayisi=0;
+	int cevaplananistekSayisi=0;
+	JButton buton1;
+	private javax.swing.JTextField anaCevaplanan;
+    private javax.swing.JTextField anaKapasite;
+    private javax.swing.JTextField istekTEXT;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel parse;
+    private javax.swing.JLabel parse1;
+    private javax.swing.JLabel parse10;
+    private javax.swing.JLabel parse11;
+    private javax.swing.JLabel parse12;
+    private javax.swing.JLabel parse13;
+    private javax.swing.JLabel parse14;
+    private javax.swing.JLabel parse15;
+    private javax.swing.JLabel parse16;
+    private javax.swing.JLabel parse17;
+    private javax.swing.JLabel parse18;
+    private javax.swing.JLabel parse19;
+    private javax.swing.JLabel parse2;
+    private javax.swing.JLabel parse20;
+    private javax.swing.JLabel parse21;
+    private javax.swing.JLabel parse22;
+    private javax.swing.JLabel parse23;
+    private javax.swing.JLabel parse24;
+    private javax.swing.JLabel parse27;
+    private javax.swing.JLabel parse28;
+    private javax.swing.JLabel parse3;
+    private javax.swing.JLabel parse31;
+    private javax.swing.JLabel parse32;
+    private javax.swing.JLabel parse33;
+    private javax.swing.JLabel parse34;
+    private javax.swing.JLabel parse35;
+    private javax.swing.JLabel parse36;
+    private javax.swing.JLabel parse37;
+    private javax.swing.JLabel parse38;
+    private javax.swing.JLabel parse4;
+    private javax.swing.JLabel parse9;
+    private javax.swing.JTextField subCevaplanan1;
+    private javax.swing.JTextField subCevaplanan10;
+    private javax.swing.JTextField subCevaplanan11;
+    private javax.swing.JTextField subCevaplanan12;
+    private javax.swing.JTextField subCevaplanan13;
+    private javax.swing.JTextField subCevaplanan14;
+    private javax.swing.JTextField subCevaplanan2;
+    private javax.swing.JTextField subCevaplanan3;
+    private javax.swing.JTextField subCevaplanan4;
+    private javax.swing.JTextField subCevaplanan5;
+    private javax.swing.JTextField subCevaplanan6;
+    private javax.swing.JTextField subCevaplanan7;
+    private javax.swing.JTextField subCevaplanan8;
+    private javax.swing.JTextField subCevaplanan9;
+    private javax.swing.JTextField subKapasite1;
+    private javax.swing.JTextField subKapasite10;
+    private javax.swing.JTextField subKapasite11;
+    private javax.swing.JTextField subKapasite12;
+    private javax.swing.JTextField subKapasite13;
+    private javax.swing.JTextField subKapasite14;
+    private javax.swing.JTextField subKapasite2;
+    private javax.swing.JTextField subKapasite3;
+    private javax.swing.JTextField subKapasite4;
+    private javax.swing.JTextField subKapasite5;
+    private javax.swing.JTextField subKapasite6;
+    private javax.swing.JTextField subKapasite7;
+    private javax.swing.JTextField subKapasite8;
+    private javax.swing.JTextField subKapasite9;
+    private javax.swing.JTextField sunucuSayisi;
+    private javax.swing.JButton uretBtn;
+    private javax.swing.JTextField yuzdelikAna;
+    private javax.swing.JTextField yuzdelikSub1;
+    private javax.swing.JTextField yuzdelikSub10;
+    private javax.swing.JTextField yuzdelikSub11;
+    private javax.swing.JTextField yuzdelikSub12;
+    private javax.swing.JTextField yuzdelikSub13;
+    private javax.swing.JTextField yuzdelikSub14;
+    private javax.swing.JTextField yuzdelikSub2;
+    private javax.swing.JTextField yuzdelikSub3;
+    private javax.swing.JTextField yuzdelikSub4;
+    private javax.swing.JTextField yuzdelikSub5;
+    private javax.swing.JTextField yuzdelikSub6;
+    private javax.swing.JTextField yuzdelikSub7;
+    private javax.swing.JTextField yuzdelikSub8;
+    private javax.swing.JTextField yuzdelikSub9;
+	public Multithread() 
+	   { 
+	    this.setSize(1240 , 680); 
+	    this.setLayout(null); 
+	    this.setVisible(true); 
+	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+	    initComponents();
+	   } 
+	 @SuppressWarnings("unchecked")
+	    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+	    private void initComponents() {
+
+	        jPanel1 = new javax.swing.JPanel();
+	        jLabel2 = new javax.swing.JLabel();
+	        istekTEXT = new javax.swing.JTextField();
+	        uretBtn = new javax.swing.JButton();
+	        jPanel2 = new javax.swing.JPanel();
+	        anaCevaplanan = new javax.swing.JTextField();
+	        anaKapasite = new javax.swing.JTextField();
+	        parse = new javax.swing.JLabel();
+	        parse2 = new javax.swing.JLabel();
+	        jPanel4 = new javax.swing.JPanel();
+	        parse3 = new javax.swing.JLabel();
+	        subKapasite1 = new javax.swing.JTextField();
+	        subCevaplanan1 = new javax.swing.JTextField();
+	        parse4 = new javax.swing.JLabel();
+	        jLabel4 = new javax.swing.JLabel();
+	        jPanel6 = new javax.swing.JPanel();
+	        jLabel5 = new javax.swing.JLabel();
+	        sunucuSayisi = new javax.swing.JTextField();
+	        jLabel20 = new javax.swing.JLabel();
+	        jLabel21 = new javax.swing.JLabel();
+	        jLabel22 = new javax.swing.JLabel();
+	        yuzdelikAna = new javax.swing.JTextField();
+	        yuzdelikSub1 = new javax.swing.JTextField();
+	        yuzdelikSub2 = new javax.swing.JTextField();
+	        jLabel23 = new javax.swing.JLabel();
+	        jLabel24 = new javax.swing.JLabel();
+	        jLabel25 = new javax.swing.JLabel();
+	        jLabel26 = new javax.swing.JLabel();
+	        yuzdelikSub4 = new javax.swing.JTextField();
+	        yuzdelikSub3 = new javax.swing.JTextField();
+	        yuzdelikSub6 = new javax.swing.JTextField();
+	        yuzdelikSub5 = new javax.swing.JTextField();
+	        jLabel27 = new javax.swing.JLabel();
+	        jLabel28 = new javax.swing.JLabel();
+	        jLabel29 = new javax.swing.JLabel();
+	        jLabel30 = new javax.swing.JLabel();
+	        yuzdelikSub8 = new javax.swing.JTextField();
+	        yuzdelikSub7 = new javax.swing.JTextField();
+	        yuzdelikSub9 = new javax.swing.JTextField();
+	        yuzdelikSub10 = new javax.swing.JTextField();
+	        jLabel31 = new javax.swing.JLabel();
+	        yuzdelikSub11 = new javax.swing.JTextField();
+	        jLabel32 = new javax.swing.JLabel();
+	        jLabel33 = new javax.swing.JLabel();
+	        jLabel34 = new javax.swing.JLabel();
+	        yuzdelikSub14 = new javax.swing.JTextField();
+	        yuzdelikSub12 = new javax.swing.JTextField();
+	        yuzdelikSub13 = new javax.swing.JTextField();
+	        jLabel6 = new javax.swing.JLabel();
+	        parse1 = new javax.swing.JLabel();
+	        jPanel9 = new javax.swing.JPanel();
+	        subCevaplanan2 = new javax.swing.JTextField();
+	        subKapasite2 = new javax.swing.JTextField();
+	        parse9 = new javax.swing.JLabel();
+	        parse10 = new javax.swing.JLabel();
+	        jLabel7 = new javax.swing.JLabel();
+	        jPanel10 = new javax.swing.JPanel();
+	        subCevaplanan4 = new javax.swing.JTextField();
+	        subKapasite4 = new javax.swing.JTextField();
+	        parse11 = new javax.swing.JLabel();
+	        parse12 = new javax.swing.JLabel();
+	        jLabel8 = new javax.swing.JLabel();
+	        jPanel11 = new javax.swing.JPanel();
+	        subCevaplanan3 = new javax.swing.JTextField();
+	        subKapasite3 = new javax.swing.JTextField();
+	        parse13 = new javax.swing.JLabel();
+	        parse14 = new javax.swing.JLabel();
+	        jLabel9 = new javax.swing.JLabel();
+	        jPanel12 = new javax.swing.JPanel();
+	        subCevaplanan5 = new javax.swing.JTextField();
+	        subKapasite5 = new javax.swing.JTextField();
+	        parse15 = new javax.swing.JLabel();
+	        parse16 = new javax.swing.JLabel();
+	        jLabel10 = new javax.swing.JLabel();
+	        jPanel13 = new javax.swing.JPanel();
+	        subCevaplanan6 = new javax.swing.JTextField();
+	        subKapasite6 = new javax.swing.JTextField();
+	        parse17 = new javax.swing.JLabel();
+	        parse18 = new javax.swing.JLabel();
+	        jPanel14 = new javax.swing.JPanel();
+	        subCevaplanan7 = new javax.swing.JTextField();
+	        subKapasite7 = new javax.swing.JTextField();
+	        parse19 = new javax.swing.JLabel();
+	        parse20 = new javax.swing.JLabel();
+	        jLabel11 = new javax.swing.JLabel();
+	        jLabel12 = new javax.swing.JLabel();
+	        jPanel15 = new javax.swing.JPanel();
+	        subCevaplanan8 = new javax.swing.JTextField();
+	        subKapasite8 = new javax.swing.JTextField();
+	        parse21 = new javax.swing.JLabel();
+	        parse22 = new javax.swing.JLabel();
+	        jLabel13 = new javax.swing.JLabel();
+	        jPanel16 = new javax.swing.JPanel();
+	        subCevaplanan9 = new javax.swing.JTextField();
+	        subKapasite9 = new javax.swing.JTextField();
+	        parse23 = new javax.swing.JLabel();
+	        parse24 = new javax.swing.JLabel();
+	        jLabel14 = new javax.swing.JLabel();
+	        jPanel18 = new javax.swing.JPanel();
+	        subCevaplanan10 = new javax.swing.JTextField();
+	        subKapasite10 = new javax.swing.JTextField();
+	        parse27 = new javax.swing.JLabel();
+	        parse28 = new javax.swing.JLabel();
+	        jLabel15 = new javax.swing.JLabel();
+	        jPanel20 = new javax.swing.JPanel();
+	        subCevaplanan11 = new javax.swing.JTextField();
+	        subKapasite11 = new javax.swing.JTextField();
+	        parse31 = new javax.swing.JLabel();
+	        parse32 = new javax.swing.JLabel();
+	        jLabel16 = new javax.swing.JLabel();
+	        jPanel21 = new javax.swing.JPanel();
+	        subCevaplanan12 = new javax.swing.JTextField();
+	        subKapasite12 = new javax.swing.JTextField();
+	        parse33 = new javax.swing.JLabel();
+	        parse34 = new javax.swing.JLabel();
+	        jLabel17 = new javax.swing.JLabel();
+	        jPanel22 = new javax.swing.JPanel();
+	        subCevaplanan13 = new javax.swing.JTextField();
+	        subKapasite13 = new javax.swing.JTextField();
+	        parse35 = new javax.swing.JLabel();
+	        parse36 = new javax.swing.JLabel();
+	        jLabel18 = new javax.swing.JLabel();
+	        jPanel23 = new javax.swing.JPanel();
+	        subCevaplanan14 = new javax.swing.JTextField();
+	        subKapasite14 = new javax.swing.JTextField();
+	        parse37 = new javax.swing.JLabel();
+	        parse38 = new javax.swing.JLabel();
+	        jLabel19 = new javax.swing.JLabel();
+
+	        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+	        jPanel1.setBackground(new java.awt.Color(51, 255, 255));
+	        jPanel1.setForeground(new java.awt.Color(255, 0, 0));
+
+	        jLabel2.setText("1. ALT SUNUCU");
+
+	        uretBtn.setText("ÜRET");
+	        uretBtn.addActionListener(new java.awt.event.ActionListener() {
+	            public void actionPerformed(java.awt.event.ActionEvent evt) {
+	                uretBtnActionPerformed(evt);
+	            }
+	        });
+
+	        jPanel2.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel2.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        parse.setText("CEVAPLANAN");
+
+	        parse2.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+	        jPanel2.setLayout(jPanel2Layout);
+	        jPanel2Layout.setHorizontalGroup(
+	            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel2Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(anaCevaplanan, javax.swing.GroupLayout.Alignment.TRAILING)
+	                    .addComponent(anaKapasite)
+	                    .addGroup(jPanel2Layout.createSequentialGroup()
+	                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(parse2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(parse, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                        .addGap(0, 10, Short.MAX_VALUE)))
+	                .addContainerGap())
+	        );
+	        jPanel2Layout.setVerticalGroup(
+	            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel2Layout.createSequentialGroup()
+	                .addComponent(parse2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(anaKapasite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(parse, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(anaCevaplanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+	        );
+
+	        jPanel4.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel4.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        parse3.setText("KAPASITE");
+
+	        parse4.setText("CEVAPLANAN");
+
+	        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+	        jPanel4.setLayout(jPanel4Layout);
+	        jPanel4Layout.setHorizontalGroup(
+	            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel4Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite1)
+	                    .addComponent(subCevaplanan1)
+	                    .addGroup(jPanel4Layout.createSequentialGroup()
+	                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(parse3)
+	                            .addComponent(parse4))
+	                        .addGap(0, 0, Short.MAX_VALUE)))
+	                .addContainerGap())
+	        );
+	        jPanel4Layout.setVerticalGroup(
+	            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel4Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse3)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse4)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel4.setText("ISTEK SAYISI");
+
+	        jPanel6.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel6.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        jLabel5.setText("2. ALT SUNUCU");
+
+	        jLabel20.setText("SUNUCU SAYISI");
+
+	        jLabel21.setText("ANA SUNUCU");
+
+	        jLabel22.setText("1. ALT SUNUCU");
+
+	        jLabel23.setText("3. ALT SUNUCU");
+
+	        jLabel24.setText("4. ALT SUNUCU");
+
+	        jLabel25.setText("6. ALT SUNUCU");
+
+	        jLabel26.setText("5. ALT SUNUCU");
+
+	        jLabel27.setText("8. ALT SUNUCU");
+
+	        jLabel28.setText("7. ALT SUNUCU");
+
+	        jLabel29.setText("9. ALT SUNUCU");
+
+	        jLabel30.setText("10. ALT SUNUCU");
+
+	        jLabel31.setText("13. ALT SUNUCU");
+
+	        jLabel32.setText("12. ALT SUNUCU");
+
+	        jLabel33.setText("11. ALT SUNUCU");
+
+	        jLabel34.setText("14. ALT SUNUCU");
+
+	        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+	        jPanel6.setLayout(jPanel6Layout);
+	        jPanel6Layout.setHorizontalGroup(
+	            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel6Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addGroup(jPanel6Layout.createSequentialGroup()
+	                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+	                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(sunucuSayisi, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(yuzdelikAna, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+	                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+	                            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(yuzdelikSub4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(yuzdelikSub3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+	                    .addGroup(jPanel6Layout.createSequentialGroup()
+	                        .addComponent(jLabel22)
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                        .addComponent(yuzdelikSub1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                        .addComponent(jLabel26)
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+	                        .addComponent(yuzdelikSub5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                    .addGroup(jPanel6Layout.createSequentialGroup()
+	                        .addComponent(jLabel5)
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                        .addComponent(yuzdelikSub2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                        .addComponent(jLabel25)
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                        .addComponent(yuzdelikSub6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addGroup(jPanel6Layout.createSequentialGroup()
+	                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+	                            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+	                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addGroup(jPanel6Layout.createSequentialGroup()
+	                                .addGap(13, 13, 13)
+	                                .addComponent(yuzdelikSub7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                                .addComponent(jLabel33)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                                .addComponent(yuzdelikSub11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                            .addGroup(jPanel6Layout.createSequentialGroup()
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(yuzdelikSub8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(jLabel32)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                                .addComponent(yuzdelikSub12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+	                    .addGroup(jPanel6Layout.createSequentialGroup()
+	                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+	                            .addGroup(jPanel6Layout.createSequentialGroup()
+	                                .addComponent(jLabel29)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(yuzdelikSub9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(jLabel31)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                                .addComponent(yuzdelikSub13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                            .addGroup(jPanel6Layout.createSequentialGroup()
+	                                .addComponent(jLabel30)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                                .addComponent(yuzdelikSub10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(jLabel34)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(yuzdelikSub14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+	                        .addGap(0, 0, Short.MAX_VALUE)))
+	                .addContainerGap())
+	        );
+	        jPanel6Layout.setVerticalGroup(
+	            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel6Layout.createSequentialGroup()
+	                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+	                    .addComponent(sunucuSayisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel23)
+	                    .addComponent(yuzdelikSub3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel28)
+	                    .addComponent(yuzdelikSub7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(yuzdelikSub11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel33))
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+	                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(yuzdelikAna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel24)
+	                    .addComponent(yuzdelikSub4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel27)
+	                    .addComponent(yuzdelikSub8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel32)
+	                    .addComponent(yuzdelikSub12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+	                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(yuzdelikSub1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel26)
+	                    .addComponent(yuzdelikSub5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel29)
+	                    .addComponent(yuzdelikSub9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel31)
+	                    .addComponent(yuzdelikSub13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+	                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(yuzdelikSub2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel25)
+	                    .addComponent(yuzdelikSub6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel30)
+	                    .addComponent(yuzdelikSub10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addComponent(jLabel34)
+	                    .addComponent(yuzdelikSub14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                .addGap(0, 12, Short.MAX_VALUE))
+	        );
+
+	        jLabel6.setText("2. ALT SUNUCU");
+
+	        parse1.setText("ANA SUNUCU");
+
+	        jPanel9.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel9.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        parse9.setText("CEVAPLANAN");
+
+	        parse10.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+	        jPanel9.setLayout(jPanel9Layout);
+	        jPanel9Layout.setHorizontalGroup(
+	            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel9Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite2)
+	                    .addComponent(subCevaplanan2)
+	                    .addComponent(parse10)
+	                    .addComponent(parse9))
+	                .addContainerGap())
+	        );
+	        jPanel9Layout.setVerticalGroup(
+	            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel9Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse10)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse9)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel7.setText("4. ALT SUNUCU");
+
+	        jPanel10.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel10.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan4.setText("KAPALI");
+
+	        subKapasite4.setText("KAPALI");
+
+	        parse11.setText("CEVAPLANAN");
+
+	        parse12.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+	        jPanel10.setLayout(jPanel10Layout);
+	        jPanel10Layout.setHorizontalGroup(
+	            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel10Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite4)
+	                    .addComponent(subCevaplanan4)
+	                    .addComponent(parse12)
+	                    .addComponent(parse11))
+	                .addContainerGap())
+	        );
+	        jPanel10Layout.setVerticalGroup(
+	            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel10Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse12)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse11)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel8.setText("3. ALT SUNUCU");
+
+	        jPanel11.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel11.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan3.setText("KAPALI");
+
+	        subKapasite3.setText("KAPALI");
+	 
+	        parse13.setText("CEVAPLANAN");
+
+	        parse14.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+	        jPanel11.setLayout(jPanel11Layout);
+	        jPanel11Layout.setHorizontalGroup(
+	            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel11Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite3)
+	                    .addComponent(subCevaplanan3)
+	                    .addComponent(parse14)
+	                    .addComponent(parse13))
+	                .addContainerGap())
+	        );
+	        jPanel11Layout.setVerticalGroup(
+	            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel11Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse14)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse13)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel9.setText("5. ALT SUNUCU");
+
+	        jPanel12.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel12.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan5.setText("KAPALI");
+
+	        subKapasite5.setText("KAPALI");
+
+	        parse15.setText("CEVAPLANAN");
+
+	        parse16.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+	        jPanel12.setLayout(jPanel12Layout);
+	        jPanel12Layout.setHorizontalGroup(
+	            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel12Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite5)
+	                    .addComponent(subCevaplanan5)
+	                    .addComponent(parse16)
+	                    .addComponent(parse15))
+	                .addContainerGap())
+	        );
+	        jPanel12Layout.setVerticalGroup(
+	            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel12Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse16)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse15)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel10.setText("6. ALT SUNUCU");
+
+	        jPanel13.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel13.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan6.setText("KAPALI");
+
+	        subKapasite6.setText("KAPALI");
+
+	        parse17.setText("CEVAPLANAN");
+
+	        parse18.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+	        jPanel13.setLayout(jPanel13Layout);
+	        jPanel13Layout.setHorizontalGroup(
+	            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel13Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite6, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+	                    .addComponent(subCevaplanan6)
+	                    .addComponent(parse18)
+	                    .addComponent(parse17))
+	                .addContainerGap())
+	        );
+	        jPanel13Layout.setVerticalGroup(
+	            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel13Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse18)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse17)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(subCevaplanan6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+	        );
+
+	        jPanel14.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel14.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan7.setText("KAPALI");
+
+	        subKapasite7.setText("KAPALI");
+
+	        parse19.setText("CEVAPLANAN");
+
+	        parse20.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+	        jPanel14.setLayout(jPanel14Layout);
+	        jPanel14Layout.setHorizontalGroup(
+	            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel14Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite7, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+	                    .addComponent(subCevaplanan7)
+	                    .addComponent(parse20)
+	                    .addComponent(parse19))
+	                .addContainerGap())
+	        );
+	        jPanel14Layout.setVerticalGroup(
+	            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel14Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse20)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse19)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel11.setText("7. ALT SUNUCU");
+
+	        jLabel12.setText("8. ALT SUNUCU");
+
+	        jPanel15.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel15.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan8.setText("KAPALI");
+
+	        subKapasite8.setText("KAPALI");
+
+	        parse21.setText("CEVAPLANAN");
+
+	        parse22.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+	        jPanel15.setLayout(jPanel15Layout);
+	        jPanel15Layout.setHorizontalGroup(
+	            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel15Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite8)
+	                    .addComponent(subCevaplanan8)
+	                    .addComponent(parse22)
+	                    .addComponent(parse21))
+	                .addContainerGap())
+	        );
+	        jPanel15Layout.setVerticalGroup(
+	            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel15Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse22)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse21)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel13.setText("9. ALT SUNUCU");
+
+	        jPanel16.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel16.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan9.setText("KAPALI");
+
+	        subKapasite9.setText("KAPALI");
+
+	        parse23.setText("CEVAPLANAN");
+
+	        parse24.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+	        jPanel16.setLayout(jPanel16Layout);
+	        jPanel16Layout.setHorizontalGroup(
+	            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel16Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite9)
+	                    .addComponent(subCevaplanan9)
+	                    .addComponent(parse24)
+	                    .addComponent(parse23))
+	                .addContainerGap())
+	        );
+	        jPanel16Layout.setVerticalGroup(
+	            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel16Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse24)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse23)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel14.setText("10. ALT SUNUCU");
+
+	        jPanel18.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel18.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan10.setText("KAPALI");
+
+	        subKapasite10.setText("KAPALI");
+
+	        parse27.setText("CEVAPLANAN");
+
+	        parse28.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+	        jPanel18.setLayout(jPanel18Layout);
+	        jPanel18Layout.setHorizontalGroup(
+	            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel18Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite10)
+	                    .addComponent(subCevaplanan10)
+	                    .addComponent(parse28)
+	                    .addComponent(parse27))
+	                .addContainerGap())
+	        );
+	        jPanel18Layout.setVerticalGroup(
+	            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel18Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse28)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse27)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel15.setText("11. ALT SUNUCU");
+
+	        jPanel20.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel20.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan11.setText("KAPALI");
+
+	        subKapasite11.setText("KAPALI");
+
+	        parse31.setText("CEVAPLANAN");
+
+	        parse32.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+	        jPanel20.setLayout(jPanel20Layout);
+	        jPanel20Layout.setHorizontalGroup(
+	            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel20Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite11)
+	                    .addComponent(subCevaplanan11)
+	                    .addComponent(parse32)
+	                    .addComponent(parse31))
+	                .addContainerGap())
+	        );
+	        jPanel20Layout.setVerticalGroup(
+	            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel20Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse32)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse31)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel16.setText("12. ALT SUNUCU");
+
+	        jPanel21.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel21.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan12.setText("KAPALI");
+
+	        subKapasite12.setText("KAPALI");
+
+	        parse33.setText("CEVAPLANAN");
+
+	        parse34.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+	        jPanel21.setLayout(jPanel21Layout);
+	        jPanel21Layout.setHorizontalGroup(
+	            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel21Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite12)
+	                    .addComponent(subCevaplanan12)
+	                    .addComponent(parse34)
+	                    .addComponent(parse33))
+	                .addContainerGap())
+	        );
+	        jPanel21Layout.setVerticalGroup(
+	            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel21Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse34)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse33)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel17.setText("13. ALT SUNUCU");
+
+	        jPanel22.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel22.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan13.setText("KAPALI");
+
+	        subKapasite13.setText("KAPALI");
+
+	        parse35.setText("CEVAPLANAN");
+
+	        parse36.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+	        jPanel22.setLayout(jPanel22Layout);
+	        jPanel22Layout.setHorizontalGroup(
+	            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel22Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite13)
+	                    .addComponent(subCevaplanan13)
+	                    .addComponent(parse36)
+	                    .addComponent(parse35))
+	                .addContainerGap())
+	        );
+	        jPanel22Layout.setVerticalGroup(
+	            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel22Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse36)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse35)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel18.setText("14. ALT SUNUCU");
+
+	        jPanel23.setBackground(new java.awt.Color(51, 255, 51));
+	        jPanel23.setMaximumSize(new java.awt.Dimension(208, 212));
+
+	        subCevaplanan14.setText("KAPALI");
+
+	        subKapasite14.setText("KAPALI");
+
+	        parse37.setText("CEVAPLANAN");
+
+	        parse38.setText("KAPASITE");
+
+	        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+	        jPanel23.setLayout(jPanel23Layout);
+	        jPanel23Layout.setHorizontalGroup(
+	            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel23Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addComponent(subKapasite14)
+	                    .addComponent(subCevaplanan14)
+	                    .addComponent(parse38)
+	                    .addComponent(parse37))
+	                .addContainerGap())
+	        );
+	        jPanel23Layout.setVerticalGroup(
+	            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel23Layout.createSequentialGroup()
+	                .addContainerGap()
+	                .addComponent(parse38)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                .addComponent(subKapasite14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addComponent(parse37)
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                .addComponent(subCevaplanan14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addContainerGap())
+	        );
+
+	        jLabel19.setText("GENEL TAKIP");
+
+	        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+	        jPanel1.setLayout(jPanel1Layout);
+	        jPanel1Layout.setHorizontalGroup(
+	            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel1Layout.createSequentialGroup()
+	                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                        .addContainerGap()
+	                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                        .addGap(20, 20, 20)
+	                        .addComponent(parse1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                        .addGap(22, 22, 22)
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+	                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+	                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+	                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+	                        .addGap(139, 139, 139)
+	                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                        .addGap(18, 18, 18)
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                        .addGap(18, 18, 18)
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                        .addGap(18, 18, 18)
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+	                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+	                        .addGap(18, 18, 18)
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addGap(0, 0, Short.MAX_VALUE)
+	                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+	                                    .addComponent(uretBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                                        .addComponent(jLabel4)
+	                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                                        .addComponent(istekTEXT, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+	                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addGap(34, 34, 34)
+	                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addGap(18, 18, 18)
+	                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+	                        .addGap(14, 14, 14)
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                                .addGap(18, 18, 18)
+	                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                                .addGap(18, 18, 18)
+	                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                                        .addGap(2, 2, 2)
+	                                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addGap(83, 83, 83)
+	                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+	                .addContainerGap(12, Short.MAX_VALUE))
+	            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                .addGroup(jPanel1Layout.createSequentialGroup()
+	                    .addGap(20, 20, 20)
+	                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                    .addContainerGap(680, Short.MAX_VALUE)))
+	        );
+	        jPanel1Layout.setVerticalGroup(
+	            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(jPanel1Layout.createSequentialGroup()
+	                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+	                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+	                                .addGap(6, 6, 6)
+	                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+	                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+	                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(parse1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addGap(17, 17, 17)
+	                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+	                                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+	                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                                        .addGap(35, 35, 35)
+	                                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addGap(18, 18, 18)
+	                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+	                                        .addGroup(jPanel1Layout.createSequentialGroup()
+	                                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+	                                        .addGroup(jPanel1Layout.createSequentialGroup()
+	                                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                            .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+	                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                        .addGap(4, 4, 4)
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+	                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+	                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                                    .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                    .addGroup(jPanel1Layout.createSequentialGroup()
+	                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+	                                            .addComponent(istekTEXT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+	                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                        .addComponent(uretBtn))))
+	                            .addGroup(jPanel1Layout.createSequentialGroup()
+	                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+	                .addGap(0, 37, Short.MAX_VALUE))
+	            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	                .addGroup(jPanel1Layout.createSequentialGroup()
+	                    .addGap(168, 168, 168)
+	                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+	                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                    .addContainerGap(175, Short.MAX_VALUE)))
+	        );
+
+	        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+	        getContentPane().setLayout(layout);
+	        layout.setHorizontalGroup(
+	            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(layout.createSequentialGroup()
+	                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addGap(0, 0, Short.MAX_VALUE))
+	        );
+	        layout.setVerticalGroup(
+	            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+	            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+	                .addGap(0, 24, Short.MAX_VALUE)
+	                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+	        );
+
+	        pack();
+	    }// </editor-fold>                        
+                                   
+	    private void uretBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
+	    	String istek = istekTEXT.getText();
+	    	istenilenIstekSayisi = Integer.parseInt(istek);
+			for(int i=0;i<20;i++) {
+				subKapasite[i]=0;
+				subCevaplanan[i]=0;
+			}
+			Thread MainThread_Kabul= new Thread(new Runnable() {
+				@Override
+				public void run() {
+					mainKabul();
+				}
+			});
+			Thread MainThread_Cevap= new Thread(new Runnable() {
+				@Override
+				public void run() {
+					mainCevap();
+				}
+			});
+			Thread SubThread_Kabul= new Thread(new Runnable() {
+				@Override
+				public void run() {
+					subKabul(1);
+				}
+			});
+			Thread SubThread_Kabul2= new Thread(new Runnable() {
+				@Override
+				public void run() {
+					subKabul(2);
+				}
+			});
+			Thread SubThread_Cevap= new Thread(new Runnable() {
+				@Override
+				public void run() {
+					subCevap(1);
+				}
+			});
+			Thread SubThread_Cevap2= new Thread(new Runnable() {
+				@Override
+				public void run() {
+					subCevap(2);
+				}
+			});
+			MainThread_Kabul.start();
+			MainThread_Cevap.start();
+			SubThread_Kabul.start();
+			SubThread_Kabul2.start();
+			SubThread_Cevap.start();
+			SubThread_Cevap2.start();
+			try {
+				MainThread_Kabul.join();
+				MainThread_Cevap.join();
+				SubThread_Kabul.join();
+				SubThread_Kabul2.join();
+				SubThread_Cevap.join();
+				SubThread_Cevap2.join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			MainThread_Kabul.interrupt();
+			MainThread_Cevap.interrupt();
+			SubThread_Kabul.interrupt();
+			SubThread_Kabul2.interrupt();
+			SubThread_Cevap.interrupt();
+			SubThread_Cevap2.interrupt();
+	    }                             
+	public void mainKabul() {
+		while(true) {
+			try {
+				Thread.sleep(100);
+			} 
+			catch (InterruptedException e) {}
+			synchronized(lock) {
+				if(istekSayisi==istenilenIstekSayisi) {
+					System.out.println("kabul edilen istek sayisi "+istekSayisi);
+					System.out.println("cevaplanan istek sayisi "+cevaplananistekSayisi);
+					System.out.println("toplam sunucu sayisi: "+yenisub+1);
+					break;
+				}
+				if(kapasite==10000) {
+					try {
+						lock.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				int n = rand.nextInt(100);
+				n += 1;
+				if(kapasite+n<=10000 && istekSayisi+n<=istenilenIstekSayisi) {
+					istekSayisi+=n;
+					//System.out.println("main istek kabul "+n);
+					lock2.lock();
+					kapasite=kapasite+n;
+					String yaz=String.valueOf(kapasite);
+					anaKapasite.setText(yaz);
+					//System.out.println("main kapasite "+kapasite);
+					lock2.unlock();
+				}
+				else {
+					if(istekSayisi+n>istenilenIstekSayisi) {
+						//System.out.println("main istek kabul "+(istenilenIstekSayisi-istekSayisi));
+						lock2.lock();
+						kapasite=kapasite+istenilenIstekSayisi-istekSayisi;
+						lock2.unlock();
+						istekSayisi=istenilenIstekSayisi;
+						String yaz=String.valueOf(kapasite);
+						anaKapasite.setText(yaz);
+						//System.out.println("main kapasite "+kapasite);
+					}
+					else {
+						istekSayisi=istekSayisi+10000-kapasite;
+						lock2.lock();
+						//System.out.println("main istek kabul "+(10000-kapasite));
+						kapasite=10000;
+						String yaz=String.valueOf(kapasite);
+						anaKapasite.setText(yaz);
+						//System.out.println("main kapasite "+kapasite);
+						lock2.unlock();
+					}
+				}System.out.println("main kapasite % "+(kapasite*100/10000));
+				lock.notify();
+			}
+		}	
+	}
+	public void mainCevap() {
+		while(true) {
+			try {
+				Thread.sleep(200);
+			} 
+			catch (InterruptedException e) {}
+			synchronized(lock) {
+				if(cevaplananistekSayisi==istenilenIstekSayisi || (kapasite==0 && istenilenIstekSayisi==istekSayisi)) {
+					System.out.println("kabul edilen istek sayisi "+istekSayisi);
+					System.out.println("cevaplanan istek sayisi "+cevaplananistekSayisi);
+					System.out.println("toplam sunucu sayisi: "+yenisub+1);
+					break;
+				}
+				if(kapasite<=0) {
+					try {
+						lock.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				int n = rand.nextInt(50);
+				n += 1;
+				if(kapasite>=n) {
+					//System.out.println("main istek cevap "+n);
+					lock5.lock();
+					mainCevaplanan+=n;
+					cevaplananistekSayisi+=n;
+					String yaz=String.valueOf(mainCevaplanan);
+					anaCevaplanan.setText(yaz);
+					lock5.unlock();
+					lock2.lock();
+					kapasite-=n;
+					lock2.unlock();
+				}
+				else {
+					//System.out.println("main istek cevap "+kapasite);
+					lock5.lock();
+					cevaplananistekSayisi+=kapasite;
+					mainCevaplanan+=kapasite;
+					String yaz=String.valueOf(mainCevaplanan);
+					anaCevaplanan.setText(yaz);
+					lock5.unlock();
+					lock2.lock();
+					kapasite=0;
+					lock2.unlock();
+				}
+				String yaz=String.valueOf(kapasite);
+				anaKapasite.setText(yaz);
+				System.out.println("main kapasite % "+(kapasite*100/10000));
+				System.out.println("main cevaplanan = "+mainCevaplanan);
+				//System.out.println("main kapasite "+kapasite);
+				lock.notify();
+			}
+		}
+	}
+	
+	public void subKabul(int subSay) {
+	while(true) {
+		try {
+			Thread.sleep(300);
+		} 
+		catch (InterruptedException e) {}
+		synchronized(lock3) {
+			if(cevaplananistekSayisi==istenilenIstekSayisi || (kapasite==0 && istenilenIstekSayisi==istekSayisi)) {
+				System.out.println("SUBKABUL "+ subSay +" kabul edilen istek sayisi "+istekSayisi);
+				System.out.println("SUBKABUL "+ subSay +" cevaplanan istek sayisi "+cevaplananistekSayisi);
+				System.out.println("toplam sunucu sayisi: "+yenisub+1);
+				break;
+			}
+			if(subKapasite[subSay]>=3500) {yenisub++;
+				subKapasite[subSay]=subKapasite[subSay]/2;
+				subKapasite[yenisub]=subKapasite[subSay];
+				Thread SubThread_Kabul= new Thread(new Runnable() {
+					@Override
+					public void run() {
+						subKabul(yenisub);
+					}
+				});
+				Thread SubThread_Cevap= new Thread(new Runnable() {
+					@Override
+					public void run() {//subCevapSay=yenisub;
+						subCevap(yenisub);
+					}
+				});
+				SubThread_Kabul.start();
+				SubThread_Cevap.start();
+			}
+			if(subKapasite[subSay]>=5000) {
+				try {
+					lock3.wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			int n = rand.nextInt(50);
+			n += 1;
+			if(kapasite>=n) {
+				lock2.lock();
+				kapasite-=n;
+				lock2.unlock();
+				String yaz=String.valueOf(kapasite);
+				anaKapasite.setText(yaz);
+				if(subKapasite[subSay]+n<=5000) {
+					//System.out.println("sub "+ subSay +"  istek kabul "+n);
+					subKapasite[subSay]=subKapasite[subSay]+n;
+					switch(subSay) {
+					  case 1:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite1.setText(yaz);
+					    break;
+					  case 2:
+					    // code block
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite2.setText(yaz);
+					    break;
+					  case 3:
+						    // code block
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite3.setText(yaz);
+						break;
+					  case 4:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite4.setText(yaz);
+						    // code block
+						    break;
+					  case 5: 
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite5.setText(yaz);
+						    // code block
+						    break;
+					  case 6:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite6.setText(yaz);
+						    // code block
+						    break;
+					  case 7:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite7.setText(yaz);
+						    // code block
+						    break;
+					  case 8:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite8.setText(yaz);
+						    // code block
+						    break;
+					  case 9:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite9.setText(yaz);
+						    // code block
+						    break;
+					  case 10:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite10.setText(yaz);
+						    // code block
+						    break;
+					  case 11:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite11.setText(yaz);
+						    // code block
+						    break;
+					  case 12:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite12.setText(yaz);
+						    // code block
+						    break;
+					  case 13:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite13.setText(yaz);
+						    // code block
+						    break;
+					  case 14:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite14.setText(yaz);
+						    // code block
+						    break;
+					  default:
+					    // code block
+					}
+					//System.out.println("sub "+ subSay +"  kapasite "+subKapasite[subSay]);
+				}
+				else {
+					//System.out.println("sub "+ subSay +"  istek kabul "+(10000-subKapasite[subSay]));
+					subKapasite[subSay]=10000;
+					switch(subSay) {
+					  case 1:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite1.setText(yaz);
+					    break;
+					  case 2:
+					    // code block
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite2.setText(yaz);
+					    break;
+					  case 3:
+						    // code block
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite3.setText(yaz);
+						break;
+					  case 4:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite4.setText(yaz);
+						    // code block
+						    break;
+					  case 5: 
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite5.setText(yaz);
+						    // code block
+						    break;
+					  case 6:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite6.setText(yaz);
+						    // code block
+						    break;
+					  case 7:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite7.setText(yaz);
+						    // code block
+						    break;
+					  case 8:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite8.setText(yaz);
+						    // code block
+						    break;
+					  case 9:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite9.setText(yaz);
+						    // code block
+						    break;
+					  case 10:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite10.setText(yaz);
+						    // code block
+						    break;
+					  case 11:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite11.setText(yaz);
+						    // code block
+						    break;
+					  case 12:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite12.setText(yaz);
+						    // code block
+						    break;
+					  case 13:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite13.setText(yaz);
+						    // code block
+						    break;
+					  case 14:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite14.setText(yaz);
+						    // code block
+						    break;
+					  default:
+					    // code block
+					}
+					//System.out.println("sub "+ subSay +"  kapasite "+subKapasite[subSay]);
+				}
+			}
+			else if(kapasite!=0){
+				if(subKapasite[subSay]+kapasite<=5000) {
+					//System.out.println("sub "+ subSay +"  istek kabul "+kapasite);
+					subKapasite[subSay]=subKapasite[subSay]+kapasite;
+					switch(subSay) {
+					  case 1:
+						  String yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite1.setText(yaz);
+					    break;
+					  case 2:
+					    // code block
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite2.setText(yaz);
+					    break;
+					  case 3:
+						    // code block
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite3.setText(yaz);
+						break;
+					  case 4:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite4.setText(yaz);
+						    // code block
+						    break;
+					  case 5: 
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite5.setText(yaz);
+						    // code block
+						    break;
+					  case 6:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite6.setText(yaz);
+						    // code block
+						    break;
+					  case 7:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite7.setText(yaz);
+						    // code block
+						    break;
+					  case 8:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite8.setText(yaz);
+						    // code block
+						    break;
+					  case 9:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite9.setText(yaz);
+						    // code block
+						    break;
+					  case 10:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite10.setText(yaz);
+						    // code block
+						    break;
+					  case 11:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite11.setText(yaz);
+						    // code block
+						    break;
+					  case 12:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite12.setText(yaz);
+						    // code block
+						    break;
+					  case 13:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite13.setText(yaz);
+						    // code block
+						    break;
+					  case 14:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite14.setText(yaz);
+						    // code block
+						    break;
+					  default:
+					    // code block
+					}
+					//System.out.println("sub "+ subSay +"  kapasite "+subKapasite[subSay]);
+					
+				}
+				else {
+					//System.out.println("sub "+ subSay +"  istek kabul "+(10000-subKapasite[subSay]));
+					subKapasite[subSay]=10000;
+					switch(subSay) {
+					  case 1:
+						  String yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite1.setText(yaz);
+					    break;
+					  case 2:
+					    // code block
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite2.setText(yaz);
+					    break;
+					  case 3:
+						    // code block
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite3.setText(yaz);
+						break;
+					  case 4:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite4.setText(yaz);
+						    // code block
+						    break;
+					  case 5: 
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite5.setText(yaz);
+						    // code block
+						    break;
+					  case 6:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite6.setText(yaz);
+						    // code block
+						    break;
+					  case 7:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite7.setText(yaz);
+						    // code block
+						    break;
+					  case 8:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite8.setText(yaz);
+						    // code block
+						    break;
+					  case 9:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite9.setText(yaz);
+						    // code block
+						    break;
+					  case 10:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite10.setText(yaz);
+						    // code block
+						    break;
+					  case 11:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite11.setText(yaz);
+						    // code block
+						    break;
+					  case 12:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite12.setText(yaz);
+						    // code block
+						    break;
+					  case 13:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite13.setText(yaz);
+						    // code block
+						    break;
+					  case 14:
+						  yaz=String.valueOf(subKapasite[subSay]);
+						  subKapasite14.setText(yaz);
+						    // code block
+						    break;
+					  default:
+					    // code block
+					}
+					//System.out.println("sub "+ subSay +"  kapasite "+subKapasite[subSay]);
+				}
+				lock2.lock();
+				kapasite=0;
+				String yaz=String.valueOf(kapasite);
+				anaKapasite.setText(yaz);
+				lock2.unlock();
+			}System.out.println("sub "+ subSay +"  kapasite % "+(subKapasite[subSay]*100/5000));
+			System.out.println("main kapasite % "+(kapasite*100/10000));
+			lock3.notify();
+		}
+	}	
+
+
+}
+
+	public void subCevap(int subCevapSay) {
+		while(true) {
+			try {
+				Thread.sleep(400);
+			} 
+			catch (InterruptedException e) {}
+			synchronized(lock3) {
+				if(cevaplananistekSayisi==istenilenIstekSayisi || (subKapasite[subCevapSay]==0 && istenilenIstekSayisi==istekSayisi)) {
+					System.out.println("SUBCEVAP "+ subCevapSay +" kabul edilen istek sayisi "+istekSayisi);
+					System.out.println("SUBCEVAP "+ subCevapSay +" cevaplanan istek sayisi "+cevaplananistekSayisi);
+					break;
+				}
+				if(subKapasite[subCevapSay]==0) {
+					try {
+						lock3.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				int n = rand.nextInt(50);
+				n += 1;
+				if(subKapasite[subCevapSay]>=n) {
+					//System.out.println("SUB "+ subCevapSay +" istek cevap "+n);
+					lock5.lock();
+					cevaplananistekSayisi+=n;
+					subCevaplanan[subCevapSay]+=n;
+					switch(subCevapSay) {
+					  case 1:
+						  String yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan1.setText(yaz);
+					    break;
+					  case 2:
+					    // code block
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan2.setText(yaz);
+					    break;
+					  case 3:
+						    // code block
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan3.setText(yaz);
+						break;
+					  case 4:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan4.setText(yaz);
+						    // code block
+						    break;
+					  case 5: 
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan5.setText(yaz);
+						    // code block
+						    break;
+					  case 6:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan6.setText(yaz);
+						    // code block
+						    break;
+					  case 7:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan7.setText(yaz);
+						    // code block
+						    break;
+					  case 8:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan8.setText(yaz);
+						    // code block
+						    break;
+					  case 9:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan9.setText(yaz);
+						    // code block
+						    break;
+					  case 10:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan10.setText(yaz);
+						    // code block
+						    break;
+					  case 11:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan11.setText(yaz);
+						    // code block
+						    break;
+					  case 12:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan12.setText(yaz);
+						    // code block
+						    break;
+					  case 13:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan13.setText(yaz);
+						    // code block
+						    break;
+					  case 14:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan14.setText(yaz);
+						    // code block
+						    break;
+					  default:
+					    // code block
+					}
+					lock5.unlock();
+					subKapasite[subCevapSay]-=n;
+				}
+				else {
+					//System.out.println("SUB "+ subCevapSay +" istek cevap "+subKapasite[subCevapSay]);
+					lock5.lock();
+					cevaplananistekSayisi+=subKapasite[subCevapSay];
+					subCevaplanan[subCevapSay]+=subKapasite[subCevapSay];
+					switch(subCevapSay) {
+					  case 1:
+						  String yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan1.setText(yaz);
+					    break;
+					  case 2:
+					    // code block
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan2.setText(yaz);
+					    break;
+					  case 3:
+						    // code block
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan3.setText(yaz);
+						break;
+					  case 4:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan4.setText(yaz);
+						    // code block
+						    break;
+					  case 5: 
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan5.setText(yaz);
+						    // code block
+						    break;
+					  case 6:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan6.setText(yaz);
+						    // code block
+						    break;
+					  case 7:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan7.setText(yaz);
+						    // code block
+						    break;
+					  case 8:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan8.setText(yaz);
+						    // code block
+						    break;
+					  case 9:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan9.setText(yaz);
+						    // code block
+						    break;
+					  case 10:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan10.setText(yaz);
+						    // code block
+						    break;
+					  case 11:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan11.setText(yaz);
+						    // code block
+						    break;
+					  case 12:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan12.setText(yaz);
+						    // code block
+						    break;
+					  case 13:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan13.setText(yaz);
+						    // code block
+						    break;
+					  case 14:
+						  yaz=String.valueOf(subCevaplanan[subCevapSay]);
+							subCevaplanan14.setText(yaz);
+						    // code block
+						    break;
+					  default:
+					    // code block
+					}
+					lock5.unlock();
+					subKapasite[subCevapSay]=0;
+				}
+				switch(subCevapSay) {
+				  case 1:
+					  String yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite1.setText(yaz);
+				    break;
+				  case 2:
+				    // code block
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite2.setText(yaz);
+				    break;
+				  case 3:
+					    // code block
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite3.setText(yaz);
+					break;
+				  case 4:
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite4.setText(yaz);
+					    // code block
+					    break;
+				  case 5: 
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite5.setText(yaz);
+					    // code block
+					    break;
+				  case 6:
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite6.setText(yaz);
+					    // code block
+					    break;
+				  case 7:
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite7.setText(yaz);
+					    // code block
+					    break;
+				  case 8:
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite8.setText(yaz);
+					    // code block
+					    break;
+				  case 9:
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite9.setText(yaz);
+					    // code block
+					    break;
+				  case 10:
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite10.setText(yaz);
+					    // code block
+					    break;
+				  case 11:
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite11.setText(yaz);
+					    // code block
+					    break;
+				  case 12:
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite12.setText(yaz);
+					    // code block
+					    break;
+				  case 13:
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite13.setText(yaz);
+					    // code block
+					    break;
+				  case 14:
+					  yaz=String.valueOf(subKapasite[subCevapSay]);
+					  subKapasite14.setText(yaz);
+					    // code block
+					    break;
+				  default:
+				    // code block
+				}
+				//System.out.println("SUB "+ subCevapSay +" kapasite "+subKapasite[subCevapSay]);
+				//yeni sunucu ise ve kapasitesi 0 olduysa kapat
+				if(yenisub>=3 && subKapasite[subCevapSay]==0) {String yaz="KAPALI";
+					switch(yenisub) {
+					  case 3:
+						    // code block
+						  subCevaplanan3.setText(yaz);
+						  subKapasite3.setText(yaz);
+						break;
+					  case 4:
+						  subCevaplanan4.setText(yaz);
+						  subKapasite4.setText(yaz);
+						    // code block
+						    break;
+					  case 5: 
+						  subCevaplanan5.setText(yaz);
+						  subKapasite5.setText(yaz);
+						    // code block
+						    break;
+					  case 6:
+						  subCevaplanan6.setText(yaz);
+						  subKapasite6.setText(yaz);
+						    // code block
+						    break;
+					  case 7:
+						  subCevaplanan7.setText(yaz);
+						  subKapasite7.setText(yaz);
+						    // code block
+						    break;
+					  case 8:
+						  subCevaplanan8.setText(yaz);
+						  subKapasite8.setText(yaz);
+						    // code block
+						    break;
+					  case 9:
+						  subCevaplanan9.setText(yaz);
+						  subKapasite9.setText(yaz);
+						    // code block
+						    break;
+					  case 10:
+						  subCevaplanan10.setText(yaz);
+						  subKapasite10.setText(yaz);
+						    // code block
+						    break;
+					  case 11:
+						  subCevaplanan11.setText(yaz);
+						  subKapasite11.setText(yaz);
+						    // code block
+						    break;
+					  case 12:
+						  subCevaplanan12.setText(yaz);
+						  subKapasite12.setText(yaz);
+						    // code block
+						    break;
+					  case 13:
+						  subCevaplanan13.setText(yaz);
+						  subKapasite13.setText(yaz);
+						    // code block
+						    break;
+					  case 14:
+						  subCevaplanan14.setText(yaz);
+						  subKapasite14.setText(yaz);
+						    // code block
+						    break;
+					  default:
+					    // code block
+					}
+					yenisub--;
+				}System.out.println("sub "+ subCevapSay +"  kapasite % "+(subKapasite[subCevapSay]*100/5000));
+				System.out.println("SUB "+ subCevapSay +" cevaplanan istek "+subCevaplanan[subCevapSay]);
+				lock3.notify();
+			}
+		}			
+	
+	}
+
+	public static void main(String[] args) {
+		java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Multithread().setVisible(true);
+            }
+        });
+	}
+	
+}
